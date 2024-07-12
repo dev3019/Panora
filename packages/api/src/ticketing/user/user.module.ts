@@ -1,3 +1,4 @@
+import { AsanaService } from './services/asana';
 import { GitlabService } from './services/gitlab';
 import { Module } from '@nestjs/common';
 import { UserController } from './user.controller';
@@ -49,6 +50,7 @@ import { Utils } from '@ticketing/@lib/@utils';
     JiraService,
     GorgiasService,
     GitlabService,
+    AsanaService,
   ],
   exports: [
     SyncService,

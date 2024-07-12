@@ -1,3 +1,6 @@
+import { AsanaUserInput, AsanaUserOutput } from '@ticketing/user/services/asana/types';
+import { GitlabUserInput, GitlabUserOutput } from '@ticketing/user/services/gitlab/types';
+
 import {
   FrontAccountInput,
   FrontAccountOutput,
@@ -126,6 +129,8 @@ import {
   GitlabCommentInput,
   GitlabCommentOutput,
 } from '@ticketing/comment/services/gitlab/types';
+import { AsanaTeamOutput } from '@ticketing/team/services/asana/types';
+import { AsanaTagOutput } from '@ticketing/tag/services/asana/types';
 
 /* INPUT */
 
@@ -153,7 +158,7 @@ export type OriginalUserInput =
   | ZendeskUserInput
   | FrontUserInput
   | GorgiasUserInput
-  | JiraUserInput;
+  | JiraUserInput | AsanaUserInput | GitlabUserInput;
 //| JiraServiceMgmtUserInput;
 /* account */
 export type OriginalAccountInput = ZendeskAccountInput | FrontAccountInput;
@@ -218,7 +223,7 @@ export type OriginalUserOutput =
   | ZendeskUserOutput
   | FrontUserOutput
   | GorgiasUserOutput
-  | JiraUserOutput;
+  | JiraUserOutput | AsanaUserOutput | GitlabUserOutput;
 /* account */
 export type OriginalAccountOutput = ZendeskAccountOutput | FrontAccountOutput;
 /* contact */
@@ -232,14 +237,16 @@ export type OriginalTagOutput =
   | ZendeskTagOutput
   | FrontTagOutput
   | GorgiasTagOutput
-  | JiraTagOutput;
+  | JiraTagOutput
+  | AsanaTagOutput;
 
 /* team */
 export type OriginalTeamOutput =
   | ZendeskTeamOutput
   | FrontTeamOutput
   | GorgiasTeamOutput
-  | JiraTeamOutput;
+  | JiraTeamOutput
+  | AsanaTeamOutput;
 
 /* attachment */
 export type OriginalAttachmentOutput =
